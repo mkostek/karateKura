@@ -1,5 +1,5 @@
 # karateKura
-admin Görevleri
+admin Görevleri<br>
     Admin turnuva tanımlar,turnuvaya hakem atama işlemleri yapar.
     Turnuva düzenleme,silme,ekleme işlemlerinin tamamını yapar.
     Hakem ekleme,silme,güncelleme işlemlerinin tamamını yapar.
