@@ -1,0 +1,101 @@
+div {
+    background-color: #e6ffff; 
+	border: 2px solid #2d1f1f4d;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+p {
+    font-size: 14px;
+
+    border-radius: 1px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+}
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+input[type=text],[type=password]{
+    padding: 10;
+    margin: 0 0;
+    display: table-cell;
+    box-sizing: border-box;
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+select {
+    padding: 15px 15px;
+    width: inherit;
+    border: none;
+    border-radius: 1px;
+    background-color: #91b4bb;
+}
+input[type=button], input[type=submit], input[type=reset], input[type=file] {
+    background-color: #4CAF50;
+    border: #0c1b1b;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
