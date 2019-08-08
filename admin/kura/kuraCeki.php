@@ -72,7 +72,7 @@ $result=$conn->query($sql);
 echo "<h4>Kayıt Olan Sporcular</h4><table><tr><th>Sporcu Ad Soyad</th><th>Doğum Tarihi</th><th>Kilo</th><th>Lisans</th></tr>";
 if($result->num_rows>0){
  while($row = $result->fetch_assoc()) { 
-			echo "<tr><td>".$row["sporcuAdSoyad"]."</td><td>".tarih_al($row["dTarih"])."</td><td>".$row["kilo"]."</td><td><a href=http://127.0.0.1:8080/spor/kulup/sporcu/".$row["lisansResim"].">Lisans</a></td></tr>";
+			echo "<tr><td>".$row["sporcuAdSoyad"]."</td><td>".tarih_al($row["dTarih"])."</td><td>".$row["kilo"]."</td><td><a href=".$base_url."/".$row["lisansResim"].">Lisans</a></td></tr>";
 			$count++;
 }
 }

@@ -4,7 +4,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "spor";
-$base_url="http://127.0.0.1:8080/spor";
+$base_url="http://127.0.0.1:90/spor";
 
 echo '<head><link rel="stylesheet" type="text/css" href="'.$base_url.'/style.css"></head>';
 $conn = new mysqli($servername, $username, $password, $dbname);

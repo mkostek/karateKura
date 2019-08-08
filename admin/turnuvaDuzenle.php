@@ -52,6 +52,7 @@ function tarih_al($date)//tarih pars edilirse bu şekilde
 if($_POST){
 $sql="UPDATE turnuva 
 SET tar='".tarih_ver($_POST["tarih"])."',
+bitis='".tarih_ver($_POST["bitis"])."',
 sonBasTar='".tarih_ver($_POST["sonBasvur"])."',
 ilceId=".$_POST["ilce"].",
 orgBaskan='".$_POST["baskan"]."',
@@ -77,6 +78,7 @@ if($result->num_rows>0)
 <input type="hidden" value="<?php echo $_GET["id"];?>"  name="id">
 <p>Son Başvuru tarihi <input type="text" name="sonBasvur" value="<?php echo tarih_al($row["sonBasTar"]); ?>"  class="datepicker"></p>
 <p>Organizasyon tarihi <input type="text" name="tarih" value="<?php echo tarih_al($row["tar"]); ?>"class="datepicker"></p>
+<p>Bitiş tarihi <input type="text" name="bitis" value="<?php echo tarih_al($row["bitis"]); ?>"class="datepicker"></p>
 <p>Organizasyon başkanı <input type="text" name="baskan" value="<?php echo $row["orgBaskan"]; ?>"></p>
 
 <p>Ayrıntılar <textarea name="reglaman" rows="33" cols="100">

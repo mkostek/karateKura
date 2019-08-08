@@ -8,11 +8,11 @@ include '../../bag.php';
 include "../include.php";
 if($_POST)
 {
-$sql="insert into `turnuva`( `tar`, `sonBasTar`, `ilceId`, `orgBaskan`, `reglaman`, `yetkiliKisi`, `iletisim`) values('".tarih_ver($_POST["tarih"])."','".tarih_ver($_POST["sonBasvur"])."',".$_POST["ilce"].",'".$_POST["baskan"]."','".htmlspecialchars($_POST["ayrıntı"],ENT_QUOTES)."','".$_POST["yetkili"]."','".$_POST["iletisim"]."')";
+$sql="insert into `turnuva`( `tar`, `sonBasTar`, `ilceId`, `orgBaskan`, `reglaman`, `yetkiliKisi`, `iletisim`,`bitis`) values('".tarih_ver($_POST["bas"])."','".tarih_ver($_POST["son"])."',".$_POST["ilce"].",'".$_POST["baskan"]."','".htmlspecialchars($_POST["ayrıntı"],ENT_QUOTES)."','".$_POST["yetkili"]."','".$_POST["iletisim"]."','".tarih_ver($_POST["bit"])."')";
 if ($conn->query($sql) === TRUE) {
     echo " başarı ile eklendi...<br>";
 	$id=$conn->insert_id;
-	header("Refresh:	url=".$base_url."/hakem/hakemGir.php?id=".$id."");	
+	header("Refresh:	url=".$base_url."/admin/hakem/hakemGir.php?id=".$id."");	
 } else {
     echo "hata: " . $sql . "<br>" . $conn->error;
 }
@@ -22,7 +22,7 @@ else if(isset($_GET["id"])&&isset($_GET["hakem"])){
 	$sql="insert into gorevli(hakemId,turnuvaId) values(".$_GET["hakem"].",".$_GET["id"].")";
 	if ($conn->query($sql) === TRUE) {
     echo "görevli başarı ile eklendi...<br>";
-		header("Refresh:1;	url=".$base_url."/hakem/hakemGir.php?id=".$id."");	
+		header("Refresh:1;	url=".$base_url."/admin/hakem/hakemGir.php?id=".$id."");	
 	} else {
     echo "hata: " . $sql . "<br>" . $conn->error;
 	}
@@ -60,5 +60,5 @@ $result = $conn->query($sql);
 ?>
 </table>
 
-<p><a onclick="javascript:void window.open('<?php  echo $base_url; ?>/hakem/index.php','a','width=700,height=500');return false;">hakem işlemleri için</a> </p>
+<p><a onclick="javascript:void window.open('<?php  echo $base_url; ?>/admin/hakem/index.php','a','width=700,height=500');return false;">hakem işlemleri için</a> </p>
 </div>

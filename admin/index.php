@@ -41,8 +41,9 @@ include "include.php";
 <div>
 <h3>Organizasyon Girme Ekranı</h3>
 <form method="POST" action="hakem/hakemGir.php">
-<p>Son Başvuru tarihi <input type="text" name="sonBasvur" class="datepicker"></p>
-<p>Organizasyon tarihi <input type="text" name="tarih" class="datepicker"></p>
+<p>Son Başvuru tarihi <input type="text" name="son" class="datepicker"></p>
+<p>Başlangıç Tarih <input type="text" name="bas" class="datepicker"></p>
+<p>Bitiş tarihi <input type="text" name="bit" class="datepicker"></p>
 <p>Organizasyon başkanı <input type="text" name="baskan"></p>
 <p>Müsabaka yeri il <select name="il" id="il" onchange="showHint()">
 <?php
@@ -65,7 +66,6 @@ $result = $conn->query($sql);
 </select>
  </p>
 <p>Ayrıntılar <textarea name="ayrıntı" rows="8" cols="75">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
 </textarea><p>
 <p>Yetkili kişi <input type="text" name="yetkili"></p>
 <p>İletişim <input type="text" name="iletisim"></p>
@@ -74,14 +74,14 @@ At w3schools.com you will learn how to make a website. We offer free tutorials i
 <div>
 <h3>Organizasyonlar</h3>
 <table>
-<tr><th>Son Başvuru Tarihi</th><th>Organizasyon Tarihi</th><th>Son Başvuru Tarihi</th><th>Organizasyon Başkanı
+<tr><th>Son Başvuru Tarihi</th><th>Bitiş</th><th>Organizasyon Tarihi</th><th>Organizasyon Başkanı
 </th><th>Organizasyon Başkanı</th><th>Müsabaka ili</th><th>Ayrıntılar</th><th>Yetkili Kişi</th><th>İletişim</th></tr>
-<?php $sql="SELECT t.turnuvaId,t.tar,t.sonBasTar,t.yoneticiId,i.ilceAd,t.orgBaskan,t.reglaman,t.yetkiliKisi,t.iletisim ,i.ilceAd from turnuva t,ilce i where i.ilceId=t.ilceId and t.sonBasTar>NOW()";
+<?php $sql="SELECT t.turnuvaId,t.bitis,t.tar,t.sonBasTar,t.yoneticiId,i.ilceAd,t.orgBaskan,t.reglaman,t.yetkiliKisi,t.iletisim ,i.ilceAd from turnuva t,ilce i where i.ilceId=t.ilceId and t.sonBasTar>NOW()";
 $result = $conn->query($sql);
 if($result->num_rows>0)
 {
  while($row = $result->fetch_assoc()) { 
-echo	"<tr><td><a href=turnuvaSil.php?id=".$row["turnuvaId"].">sil</a></td><td>".$row["tar"]."</td><td>".$row["sonBasTar"]."</td><td>".$row["ilceAd"]."</td>
+echo	"<tr><td><a href=turnuvaSil.php?id=".$row["turnuvaId"].">sil</a></td><td>".$row["sonBasTar"]."</td><td>".$row["bitis"]."</td><td>".$row["tar"]."</td><td>".$row["ilceAd"]."</td>
 <td>".$row["orgBaskan"]."</td><td>".$row["reglaman"]."</td><td>".$row["yetkiliKisi"]."</td><td>".$row["iletisim"]."</td>
 <td><a href=turnuvaDuzenle.php?id=".$row["turnuvaId"].">Düzenle</a></td></tr>";
     }

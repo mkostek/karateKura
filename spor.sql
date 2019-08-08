@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 13 Oca 2019, 19:11:30
--- Sunucu sürümü: 5.7.17
--- PHP Sürümü: 5.6.30
+-- Üretim Zamanı: 08 Ağu 2019, 15:17:25
+-- Sunucu sürümü: 10.3.16-MariaDB
+-- PHP Sürümü: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -73,7 +73,19 @@ INSERT INTO `gorevli` (`gId`, `hakemId`, `turnuvaId`) VALUES
 (45, 9, 33),
 (49, 11, 33),
 (47, 4, 33),
-(48, 10, 33);
+(48, 10, 33),
+(50, 9, 34),
+(51, 9, 35),
+(52, 8, 36),
+(53, 9, 37),
+(54, 9, 38),
+(55, 10, 39),
+(56, 8, 39),
+(57, 8, 40),
+(58, 11, 40),
+(59, 9, 41),
+(60, 11, 41),
+(61, 10, 41);
 
 -- --------------------------------------------------------
 
@@ -95,7 +107,7 @@ INSERT INTO `hakem` (`hakemId`, `hakemAd`, `hakemSoyad`) VALUES
 (4, ' veli', 'gungor'),
 (10, ' yekta', 'kurtulus'),
 (9, ' ahmet ', 'hakem'),
-(8, ' nihat', 'kahveci'),
+(8, ' nihat', 'kahvecip'),
 (11, ' fÄ±rat', 'duÃ§ar');
 
 -- --------------------------------------------------------
@@ -1225,7 +1237,46 @@ INSERT INTO `islem` (`islemId`, `turnuvaId`, `TCNo`) VALUES
 (39, 33, 9982254),
 (40, 33, 2314),
 (41, 33, 54895),
-(42, 33, 4862);
+(42, 33, 4862),
+(43, 34, 2147483647),
+(44, 34, 4862),
+(45, 34, 54546),
+(69, 39, 4652489),
+(47, 34, 59478),
+(66, 39, 54895),
+(49, 37, 2147483647),
+(50, 37, 9982254),
+(51, 37, 4862),
+(52, 37, 2314),
+(53, 37, 54895),
+(54, 37, 59478),
+(65, 39, 2314),
+(68, 39, 4862),
+(57, 39, 2147483647),
+(58, 39, 2147483647),
+(59, 39, 2147483647),
+(60, 39, 2147483647),
+(61, 39, 2147483647),
+(62, 39, 2147483647),
+(63, 39, 54546),
+(64, 39, 9982254),
+(67, 39, 59478),
+(70, 39, 2147483647),
+(71, 39, 2147483647),
+(74, 41, 15642),
+(73, 39, 2147483647),
+(75, 41, 889),
+(76, 41, 777),
+(77, 41, 4652489),
+(79, 41, 2147483647),
+(80, 41, 2147483647),
+(81, 41, 54546),
+(82, 41, 9982254),
+(83, 41, 4862),
+(84, 41, 2314),
+(85, 41, 54895),
+(86, 41, 59478),
+(87, 41, 34343);
 
 -- --------------------------------------------------------
 
@@ -1248,7 +1299,6 @@ CREATE TABLE `kulup` (
 --
 
 INSERT INTO `kulup` (`kulupId`, `kulupAd`, `kullaniciAd`, `kulupSifre`, `kulupMail`, `ilceId`, `aktif`) VALUES
-(24, 'tugaycan', 'tugaycan', '10n0066', 'mustafakostek@gmail.com', 69, b'1'),
 (25, 'sdfdfsd', 'asd', 'asd', 'dfdf', 4, b'1'),
 (26, 'sdfdfsd', 'xyz', 'abc', 'dfdf', 4, b'1'),
 (33, 'besik beyli', 'mkostek', '10n0066', 'eliteboymusti@yandex.com.tr', 62, b'1');
@@ -1297,39 +1347,48 @@ CREATE TABLE `mac` (
 --
 
 INSERT INTO `mac` (`macId`, `turnuvaId`, `sporcuId`, `sporcuIdi`, `sonuc`, `flag`) VALUES
-(128, 33, 76, 9982254, 0, 0),
-(129, 33, 889, 15642, 1, 0),
-(130, 33, 1887145, 34547, 0, 0),
-(131, 33, 54546, 4862, 1, 0),
-(132, 33, 54895, 777, 1, 0),
-(133, 33, 2314, NULL, 0, 0),
-(134, 33, 66, NULL, 1, 0),
-(135, 33, 2221, NULL, 1, 0),
-(136, 33, 76, 15642, 1, 1),
-(137, 33, 1887145, 4862, 0, 1),
-(138, 33, 777, 2314, 0, 1),
-(139, 33, 66, 2221, 1, 1),
-(140, 33, 15642, 1887145, 1, 2),
-(141, 33, 777, 2221, 0, 2),
-(142, 33, 1887145, 777, 0, 3),
-(143, 33, 1887145, 1887145, 0, 4),
-(144, 33, 1887145, 1887145, 2, 5),
-(145, 31, 889, 34547, 0, 0),
-(146, 31, 1887145, 66, 1, 0),
-(147, 31, 123456, NULL, 0, 0),
-(148, 31, 8555, NULL, 0, 0),
-(149, 31, 5557, NULL, 0, 0),
-(150, 31, 76, NULL, 0, 0),
-(151, 31, 2221, NULL, 0, 0),
-(152, 31, 15642, NULL, 0, 0),
-(153, 31, 889, 66, 1, 1),
-(154, 31, 123456, 8555, 0, 1),
-(155, 31, 5557, 76, 0, 1),
-(156, 31, 2221, 15642, 0, 1),
-(157, 31, 66, 123456, 1, 2),
-(158, 31, 5557, 2221, 0, 2),
-(159, 31, 123456, 5557, 1, 3),
-(160, 31, 5557, 5557, 2, 4);
+(169, 37, 59478, 2314, 0, 0),
+(170, 37, 4652489, 2147483647, 0, 0),
+(171, 37, 4862, 9982254, 1, 0),
+(172, 37, 54895, NULL, 0, 0),
+(173, 37, 59478, 4652489, 0, 1),
+(174, 37, 9982254, 54895, 1, 1),
+(175, 37, 59478, 54895, 1, 2),
+(176, 37, 54895, 54895, 0, 3),
+(177, 37, 54895, 54895, 1, 4),
+(178, 37, 54895, 54895, 2, 5),
+(179, 39, 54895, 54546, 0, 0),
+(180, 39, 2147483647, 2147483647, 1, 0),
+(181, 39, 2147483647, 2147483647, 1, 0),
+(182, 39, 2147483647, 2314, 1, 0),
+(183, 39, 9982254, 59478, 1, 0),
+(184, 39, 2147483647, 2147483647, 0, 0),
+(185, 39, 4862, 4652489, 0, 0),
+(186, 39, 2147483647, 2147483647, 1, 0),
+(187, 39, 54895, 2147483647, 0, 1),
+(188, 39, 2147483647, 2314, 1, 1),
+(189, 39, 59478, 2147483647, 0, 1),
+(190, 39, 4862, 2147483647, 0, 1),
+(191, 39, 54895, 2314, 0, 2),
+(192, 39, 59478, 4862, 1, 2),
+(193, 39, 54895, 4862, 1, 3),
+(194, 39, 4862, 4862, 2, 4),
+(195, 41, 4652489, 4862, 1, 0),
+(196, 41, 34343, 2147483647, 0, 0),
+(197, 41, 777, 889, 1, 0),
+(198, 41, 2147483647, 9982254, 1, 0),
+(199, 41, 54546, 2314, 0, 0),
+(200, 41, 54895, NULL, 0, 0),
+(201, 41, 15642, NULL, 0, 0),
+(202, 41, 59478, NULL, 0, 0),
+(203, 41, 4862, 34343, 0, 1),
+(204, 41, 889, 9982254, 1, 1),
+(205, 41, 54546, 54895, 0, 1),
+(206, 41, 15642, 59478, 1, 1),
+(207, 41, 4862, 9982254, 0, 2),
+(208, 41, 54546, 59478, 1, 2),
+(209, 41, 4862, 59478, 0, 3),
+(210, 41, 4862, 4862, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -1358,11 +1417,9 @@ INSERT INTO `sporcu` (`TCNo`, `lisansResim`, `sporcuAdSoyad`, `kilo`, `dTarih`, 
 ('88452436', 'resim/HPIM0346.JPG', 'uÄ±ufdhd sdfsdq', 20, '2019-01-05', 30, 5),
 ('8454', 'resim/8454.jpg', 'sonuncu', 19, '2019-03-14', 30, 3),
 ('1', '', 'mustafa balcÄ±', 60, '2019-01-11', 30, 5),
-('76', 'resim/76.jpg', 'gurhan can', 63, '1997-07-07', 24, 3),
-('34547', 'resim/34547.jpg', 'demirhan atik', 70, '2019-01-11', 24, 3),
-('2221', 'resim/2221.jpg', 'weqdqwd', 10, '2019-01-11', 24, 1),
-('66', 'resim/66.jpg', 'dsdsd', 47, '2019-01-11', 24, 3),
-('1887145', 'resim/1887145.jpg', 'verhat', 59, '2019-01-07', 24, 6),
+('4652489', 'resim/4652489.jpg', 'nicola anelka', 10, '2019-08-05', 33, 1),
+('45656', 'resim/45656.jpg', 'hayri can', 10, '2019-08-06', 33, 1),
+('18878813626', 'resim/18878813626.jpg', 'hayri can', 53, '2019-08-06', 33, 5),
 ('15642', 'resim/15642.jpg', 'abuzer', 10, '2003-05-05', 25, 1),
 ('889', 'resim/889.jpg', 'haydar', 58, '2018-11-05', 25, 5),
 ('777', 'resim/777.jpg', 'niyazi', 23, '2005-05-05', 25, 3),
@@ -1374,7 +1431,8 @@ INSERT INTO `sporcu` (`TCNo`, `lisansResim`, `sporcuAdSoyad`, `kilo`, `dTarih`, 
 ('4862', 'resim/4862.jpg', 'gÃ¼l', 38, '2011-01-01', 33, 3),
 ('2314', 'resim/0002314.jpg', 'feyzi', 10, '2003-05-05', 33, 1),
 ('54895', 'resim/54895.jpg', 'kadir', 28, '2012-02-02', 33, 5),
-('59478', 'resim/59478.jpg', 'yeliz kÃ¶stek', 58, '2001-01-01', 33, 1);
+('59478', 'resim/59478.jpg', 'yeliz kÃ¶stek', 58, '2001-01-01', 33, 1),
+('34343', 'resim/34343.jpg', 'yuzarsif', 19, '2019-08-14', 33, 4);
 
 -- --------------------------------------------------------
 
@@ -1389,30 +1447,20 @@ CREATE TABLE `turnuva` (
   `yoneticiId` int(11) DEFAULT NULL,
   `ilceId` int(11) DEFAULT NULL,
   `orgBaskan` varchar(50) DEFAULT NULL,
-  `reglaman` text,
+  `reglaman` text DEFAULT NULL,
   `yetkiliKisi` varchar(50) DEFAULT NULL,
-  `iletisim` varchar(50) DEFAULT NULL
+  `iletisim` varchar(50) DEFAULT NULL,
+  `bitis` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `turnuva`
 --
 
-INSERT INTO `turnuva` (`turnuvaId`, `tar`, `sonBasTar`, `yoneticiId`, `ilceId`, `orgBaskan`, `reglaman`, `yetkiliKisi`, `iletisim`) VALUES
-(3, '2019-01-09', '2019-01-08', NULL, 748, 'sdsd', 'hhs', 'mustafa', '5549889655'),
-(5, '2019-01-09', '2019-01-08', NULL, 759, 'ahmet reis', 'baya iyi', 'yetkili', '0222222222'),
-(6, '2019-01-13', '2019-01-10', NULL, 759, 'ahmet reis', 'baya iyi', 'yetkili', '0222222222'),
-(10, '2019-01-14', '2019-01-11', NULL, 754, 'ahmet reis', 'ÅŸeytan ayrÄ±ntÄ±da gizlidir', 'mustafa', '9Ä±098043985'),
-(28, '2019-01-14', '2019-01-10', NULL, 796, 'hacÄ± bÄ±ttÄ±lÄ±', 'At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. \r\n', 'hayri bey', '055549935366'),
-(29, '2019-01-10', '2019-01-09', NULL, 972, 'seydi ali reis', 'At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. \r\n', 'hÄ±yar bey', '05547789877'),
-(31, '2019-01-14', '2019-01-11', NULL, 754, 'seydi ali reis', 'At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. \r\ni', 'yetki', '0222222222'),
-(22, '2019-01-19', '2019-01-03', NULL, 827, 'ahmet reis fgfg', 'bu zamanda yapÄ±lacak', 'hayri velet', '02665874745'),
-(23, '2019-01-19', '2019-01-03', NULL, 827, 'ahmet reis fgfg', 'bu zamanda yapÄ±lacak', 'hayri velet', '02665874745'),
-(24, '2019-01-01', '2019-01-01', NULL, 602, '000000', '8888888888888', 'hayri veleti', '000000000000'),
-(25, '2019-01-01', '2019-01-01', NULL, 602, '000000', '8888888888888', 'hayri veleti', '000000000000'),
-(26, '2019-01-01', '2019-01-01', NULL, 602, '000000', '8888888888888', 'hayri veleti', '7777777777777'),
-(27, '2019-01-09', '2019-01-03', NULL, 775, '555555555', '5555555555', '5555555', '888888888888'),
-(33, '2019-01-18', '2019-01-14', NULL, 917, 'Tugaycan KÃ¶stek', 'Lorem Ipsum Nedir ve Ne Anlama Gelir?\r\nÅžimdilerde dijital dÃ¼nyada sÄ±kÃ§a karÅŸÄ±mÄ±za Ã§Ä±kan Lorem Ipsum aslÄ±nda Ã§ok Ã¶ncelere dayanÄ±yor ve yÄ±llardan beridir matbaa iÃ§erisinde de kullanÄ±lÄ±yor. Lorem Ipsum en basit haliyle yapÄ±lan yazÄ±lÄ± Ã§alÄ±ÅŸmalarda yazÄ±nÄ±n nasÄ±l gÃ¶rÃ¼neceÄŸini anlayabilmemiz iÃ§in kullandÄ±ÄŸÄ±mÄ±z taslak bir metindir. Peki, gerek matbaada gerekse de dijital dÃ¼nyada sÃ¼rekli olarak kullanÄ±lan bu metnin tarihi nedir ve ne anlama gelir?&#039;\r\n\r\nLorem Ipsum&#039;un Tarihi\r\nLorem Ipsum yaklaÅŸÄ±k 500 yÄ±l Ã¶nce bir matbaacÄ±nÄ±n baskÄ±lar iÃ§in hazÄ±rladÄ±ÄŸÄ± font model kitabÄ±nda kullanÄ±lmÄ±ÅŸtÄ±r. YÄ±llar geÃ§tikÃ§e kullanÄ±m alanlarÄ± da kullanan kiÅŸi sayÄ±sÄ± da artarak devam etmiÅŸtir. Kullanan insanlar uzun yÄ±llar bunun anlamsÄ±z kelimelerden oluÅŸan bir metin olduÄŸunu dÃ¼ÅŸÃ¼ndÃ¼ler. Ancak sonradan edinilen bulgular aslÄ±nda gerÃ§eÄŸin Ã§ok farklÄ± olduÄŸunu ortaya koydu.\r\n\r\nLorem Ipsum&#039;un tarihi milattan Ã¶nce 45 (MÃ–.43) yÄ±lÄ±na kadar dayanÄ±yor. O tarihlerde Ã‡iÃ§ero tarafÄ±ndan yazÄ±lan &quot;Ä°yi ve KÃ¶tÃ¼nÃ¼n UÃ§ SÄ±nÄ±rlarÄ±&quot; kitabÄ±nÄ±n 1.30.32 paragrafÄ±nda geÃ§tiÄŸi sonradan Ã¶ÄŸrenilmiÅŸtir. Kitap aynÄ± zamanda 1500&#039;lÃ¼ yÄ±llarda Avrupa&#039;da RÃ¶nesans dÃ¶nemi ile popÃ¼ler olmuÅŸ, aynÄ± dÃ¶nemde Lorem Ipsum&#039;u ilk kullanan matbaacÄ±ya da muhtemelen bu vesileyle ulaÅŸmÄ±ÅŸ.  \r\n\r\nYÄ±llardÄ±r kullanÄ±lan Lorem Ipsum taslaÄŸÄ±;\r\n&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;\r\n\r\nLorem Ipsum AnlamÄ± Nedir?\r\nYazÄ±nÄ±n bir bÃ¼tÃ¼n olarak anlamÄ± bulunmamaktadÄ±r. Ancak Ã‡iÃ§ero&#039;dan alÄ±nan kÄ±sÄ±m ve anlamÄ± ÅŸÃ¶yle;\r\n\r\n&quot;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...&quot;\r\n\r\n&quot;AcÄ±yÄ± seven, arayan ve ona sahip olmak isteyen hiÃ§ kimse yoktur. Nedeni basit. Ã‡Ã¼nkÃ¼ o acÄ±dÄ±r...&quot;\r\n\r\nYazÄ±nÄ±n geri kalan kÄ±smÄ± ise latin harflerinden ilk bakÄ±ÅŸta anlamlÄ± bir yazÄ± gibi gÃ¶rÃ¼nebilecek ÅŸekilde rasgele yazÄ±lmÄ±ÅŸtÄ±r.  \r\n\r\nLorem Ipsum Neden KullanÄ±lÄ±r?\r\nYapÄ±lan araÅŸtÄ±rmalar gÃ¶steriyor ki, insanlar bir baskÄ± Ã¼rÃ¼nÃ¼nÃ¼ ya da dijital tasarÄ±mÄ± deÄŸerlendirirken kendilerini yazÄ±ya ve onun anlamÄ±na kaptÄ±rmadan objektif deÄŸerlendirme yapamÄ±yorlar. Bu nedenle Lorem Ipsum insanlarÄ±n tasarÄ±ma daha iyi odaklanmalarÄ± ve aynÄ± zamanda anlamlÄ± bir yazÄ± formuna Ã§ok benzer bir Ã¶rnekle birlikte tasarÄ±mÄ± gÃ¶rebilmeleri iÃ§in kullanÄ±lÄ±r.  \r\n\r\nBu kullanÄ±mÄ±n yÄ±llarca sÃ¼regelen bir gelenek olduÄŸunu sÃ¶yleyebiliriz. GÃ¼nÃ¼mÃ¼zde hala birÃ§ok insan tarafÄ±ndan aktif olarak kullanÄ±ldÄ±ÄŸÄ±nÄ± da dÃ¼ÅŸÃ¼nÃ¼rsek, matbaa, online ve tasarÄ±m dÃ¼nyasÄ±nda kullanÄ±lmamasÄ± iÃ§in hiÃ§bir sebep yok.\r\n\r\nÃ–rnek olarak oluÅŸturulmuÅŸ 2 paragraf uzunluÄŸundaki Lorem Ipsum Ã¶rneÄŸini de buraya bÄ±rakalÄ±m. Belki de arkasÄ±nda yatan baÅŸka gizemleri de siz Ã§Ã¶zebilirsiniz.\r\n\r\nNOT: YazÄ± fontu seÃ§erken dikkat edilmesi gerekenler hakkÄ±ndaki ÅŸu yazÄ±mÄ±za da gÃ¶z atabilirsiniz.\r\n\r\n&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis facilisis velit. Nunc justo lorem, feugiat molestie faucibus ac, consequat nec magna. Praesent convallis tortor et tortor dapibus, a tincidunt felis finibus. Quisque purus nisl, malesuada id lacinia nec, sollicitudin ut eros. Mauris mollis mauris in felis viverra, eget pulvinar lorem porta. Sed id ullamcorper massa, eget tempus libero. Proin eu rhoncus mauris. Mauris ac pharetra turpis.\r\n\r\nOrci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse mattis, enim ut sodales bibendum, purus tellus aliquam felis, vel placerat lectus massa vitae justo. Curabitur pellentesque a quam vel aliquam. In ornare ultricies nunc, nec eleifend est fringilla nec. Cras vestibulum eros ultricies fringilla laoreet. Suspendisse sodales odio risus, et ultricies leo elementum consequat. Fusce metus enim, tristique eu velit eleifend, fringilla tristique purus. Mauris pharetra posuere mauris, id auctor nunc eleifend eget. Maecenas in justo sit amet est volutpat lobortis vitae id nisl. Praesent in quam ut massa fermentum tempus. In porttitor magna et justo ullamcorper consectetur. Nullam in ante a elit maximus eleifend. Nunc neque sem, dapibus a viverra ac, sodales volutpat tortor.&quot;', 'Mustafa Bey', '2665874577');
+INSERT INTO `turnuva` (`turnuvaId`, `tar`, `sonBasTar`, `yoneticiId`, `ilceId`, `orgBaskan`, `reglaman`, `yetkiliKisi`, `iletisim`, `bitis`) VALUES
+(41, '2019-08-20', '2019-08-17', NULL, 801, 'yuzarsif', 'ayrÄ±ntÄ±lÄ±', 'tugay bey', '02663548745', '2019-08-23'),
+(40, '2019-08-10', '2019-08-08', NULL, 920, 'hasan baÅŸkan', 'asa', 'sasa', 'sas', '2019-08-15'),
+(39, '2019-08-11', '2019-08-09', NULL, 918, 'hasan baÅŸkan', '', 'ccc', 'ccc', '2019-08-17');
 
 -- --------------------------------------------------------
 
@@ -1522,47 +1570,56 @@ ALTER TABLE `yonetici`
 -- Tablo için AUTO_INCREMENT değeri `gorevli`
 --
 ALTER TABLE `gorevli`
-  MODIFY `gId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `gId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `hakem`
 --
 ALTER TABLE `hakem`
   MODIFY `hakemId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `ilce`
 --
 ALTER TABLE `ilce`
   MODIFY `ilceId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=973;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `islem`
 --
 ALTER TABLE `islem`
-  MODIFY `islemId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `islemId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `kulup`
 --
 ALTER TABLE `kulup`
   MODIFY `kulupId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `kusak`
 --
 ALTER TABLE `kusak`
   MODIFY `kusakId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `mac`
 --
 ALTER TABLE `mac`
-  MODIFY `macId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `macId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `turnuva`
 --
 ALTER TABLE `turnuva`
-  MODIFY `turnuvaId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `turnuvaId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
 --
 -- Tablo için AUTO_INCREMENT değeri `yonetici`
 --
 ALTER TABLE `yonetici`
-  MODIFY `yoneticiId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `yoneticiId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
